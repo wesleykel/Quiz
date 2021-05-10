@@ -47,34 +47,60 @@ const question1 = [
   },
 
   {
-    ques: "What colour is a giraffe's tongue?  ",
+    ques: "What colour is a giraffe's tongue?",
 
     answer1: "Pink",
     answer2: "Green",
     answer3: "Blue",
     answer4: "Black",
   },
+
+  {
+    ques: "What is the Captial of Iceland?",
+
+    answer1: "Reykjavík",
+    answer2: "Zurich",
+    answer3: "New Dehli",
+    answer4: "Manhattan",
+  },
+
+  {
+    ques:
+      "Which is the eighth and furthest-known planet from the sun in the solar system?",
+
+    answer1: "Earth",
+    answer2: "Pluto",
+    answer3: "Mars",
+    answer4: "Neptune",
+  },
 ];
 
 const answers = [
   {
-    answer1: "Pacific, Mountain, Central, Eastern",
+    answer: "Pacific, Mountain, Central, Eastern",
   },
 
   {
-    answer2: "1914",
+    answer: "1914",
   },
 
   {
-    answer3: "32",
+    answer: "32",
   },
   {
-    answer4: "Blue",
+    answer: "Blue",
+  },
+  {
+    answer: "Reykjavík",
+  },
+
+  {
+    answer: "Neptune",
   },
 ];
 
 //Check answer need to be worked out
-
+/*
 function checkAnswerA() {
   if (buttonA.innerText === answers[0].answer1) {
     buttonA.style.backgroundColor = "green";
@@ -93,12 +119,14 @@ function checkAnswerB() {
 }
 
 function checkAnswerC() {
-  if (buttonC.innerText === answers[1].answer2) {
+  if (buttonC.innerText === buttonC.style.backgroundColor = "green";
+  } else {
+    buttonC.style.backgroundColor = "red";) {
     buttonC.style.backgroundColor = "green";
   } else {
     buttonC.style.backgroundColor = "red";
   }
-  else if (buttonC.innerText === answers[3].answer4) {
+  if (buttonC.innerText === answers[3].answer4) {
     buttonC.style.backgroundColor = "green";
   } else {
     buttonC.style.backgroundColor = "red";
@@ -110,7 +138,7 @@ function checkAnswerD() {
     buttonD.style.backgroundColor = "red";
   }
 }
-
+*/
 //console.log(JSON.stringify(question1[0].answer1));
 //console.log(correctAnswer2);
 //console.log(correctAnswer3);
@@ -121,14 +149,69 @@ function checkAnswerD() {
 
 const buttonSub = document.querySelector(".button");
 buttonSub.addEventListener("click", askQuestion, false);
+
 const buttonA = document.querySelector(".answer1");
-buttonA.addEventListener("click", checkAnswerA, false);
+buttonA.addEventListener("click", checkAnswer, false);
+buttonA.addEventListener("click", checkAnswerE, false);
 
 const buttonB = document.querySelector(".answer2");
 buttonB.addEventListener("click", checkAnswerB, false);
 
 const buttonC = document.querySelector(".answer3");
 buttonC.addEventListener("click", checkAnswerC, false);
+buttonC.addEventListener("click", checkAnswerD, false);
 
 const buttonD = document.querySelector(".answer4");
-buttonD.addEventListener("click", checkAnswerD, false);
+buttonD.addEventListener("click", checkAnswerF, false);
+
+function checkAnswer() {
+  switch (answers[0].answer) {
+    case buttonA.innerText:
+      buttonA.style.backgroundColor = "green";
+      break;
+  }
+}
+
+function checkAnswerC() {
+  switch (answers[1].answer) {
+    case buttonC.innerText:
+      buttonC.style.backgroundColor = "green";
+      break;
+  }
+}
+
+function checkAnswerB() {
+  switch (answers[2].answer) {
+    case buttonB.innerText:
+      buttonB.style.backgroundColor = "green";
+      break;
+  }
+}
+
+function checkAnswerD() {
+  switch (answers[3].answer) {
+    case buttonC.innerText:
+      buttonC.style.backgroundColor = "green";
+      break;
+  }
+}
+
+function checkAnswerE() {
+  switch (answers[4].answer) {
+    case buttonA.innerText:
+      buttonA.style.backgroundColor = "green";
+      break;
+  }
+}
+
+function checkAnswerF() {
+  switch (answers[5].answer) {
+    case buttonD.innerText:
+      buttonD.style.backgroundColor = "green";
+      break;
+  }
+}
+
+//buttonB.style.backgroundColor = "red";
+//buttonC.style.backgroundColor = "red";
+//buttonD.style.backgroundColor = "red";
