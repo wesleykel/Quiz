@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding-top: 10vh;
+}
+.wrapper {
+  border: 1px solid;
+  width: 60%;
+  margin: 0 auto;
+  font-family: "Lato", sans-serif;
+}
+header {
+  padding: 50px;
+  text-align: center;
+}
+.question {
+  border: 1px solid red;
+  height: 40px;
+  text-align: center;
+  padding: 30px;
+}
+.answer-box {
+  border: 1px solid;
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.answer1,
+.answer2,
+.answer3,
+.answer4 {
+  padding: 30px;
+  border: 1px red solid;
+}
+
+.button {
+  padding: 30px;
+  text-align: center;
+}
