@@ -6,20 +6,26 @@ body {
   padding-top: 10vh;
 }
 .wrapper {
-  border: 1px solid;
+  border: 3px solid;
   width: 60%;
   margin: 0 auto;
   font-family: "Lato", sans-serif;
+  background-color: #f6f5f5;
+  border-radius: 10px;
+}
+h1 {
+  font-size: 10vh;
 }
 header {
   padding: 50px;
   text-align: center;
 }
 .question {
-  border: 1px solid red;
   height: 40px;
   text-align: center;
   padding: 30px;
+  font-size: 3vh;
+  background-color: #d3e0ea;
 }
 .answer-box {
   border: 1px solid;
@@ -32,10 +38,27 @@ header {
 .answer3,
 .answer4 {
   padding: 30px;
-  border: 1px red solid;
+  border: 1px lightgray solid;
+  font-size: 3vh;
 }
+/*.answer1:hover,
+.answer2:hover,
+.answer3:hover,
+.answer4:hover {
+  background-color: #ec524b;
+}*/
 
 .button {
   padding: 30px;
   text-align: center;
+  background-color: #276678;
+}
+
+button {
+  padding: 20px;
+  width: 20vh;
+  font-size: 2vh;
+  font-weight: bold;
+  border-radius: 6px;
+  background-color: #e84545;
 }

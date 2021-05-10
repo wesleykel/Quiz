@@ -12,6 +12,11 @@ function askQuestion() {
   answer4 = document.querySelector(".answer4").innerText = question1[i].answer4;
 
   i++;
+
+  buttonA.style.backgroundColor = " #f6f5f5";
+  buttonB.style.backgroundColor = " #f6f5f5";
+  buttonC.style.backgroundColor = " #f6f5f5";
+  buttonD.style.backgroundColor = " #f6f5f5";
 }
 
 const question1 = [
@@ -40,6 +45,15 @@ const question1 = [
     answer3: "14",
     answer4: "26",
   },
+
+  {
+    ques: "What colour is a giraffe's tongue?  ",
+
+    answer1: "Pink",
+    answer2: "Green",
+    answer3: "Blue",
+    answer4: "Black",
+  },
 ];
 
 const answers = [
@@ -54,42 +68,67 @@ const answers = [
   {
     answer3: "32",
   },
+  {
+    answer4: "Blue",
+  },
 ];
-
-const correctAnswer1 =
-  JSON.stringify(question1[0].answer1) === JSON.stringify(answers[0].answer1);
-
-const correctAnswer2 =
-  JSON.stringify(question1[1].answer3) === JSON.stringify(answers[1].answer2);
-
-const correctAnswer3 =
-  JSON.stringify(question1[2].answer2) === JSON.stringify(answers[2].answer3);
-console.log(correctAnswer1);
 
 //Check answer need to be worked out
 
 function checkAnswerA() {
-  let a = document.querySelector(".answer1").value;
-
-  if (a === answers[0].answer1 || answers[1].answer2 || answers[2].answer3) {
-    console.log("your correct");
+  if (buttonA.innerText === answers[0].answer1) {
+    buttonA.style.backgroundColor = "green";
   } else {
-    console.log("your incorrect");
+    buttonA.style.backgroundColor = "red";
   }
-  console.log(a);
-  console.log(JSON.stringify(question1[0].answer1));
+}
+
+function checkAnswerB() {
+  console.log(buttonB);
+  if (buttonB.innerText === answers[2].answer3) {
+    buttonB.style.backgroundColor = "green";
+  } else {
+    buttonB.style.backgroundColor = "red";
+  }
+}
+
+function checkAnswerC() {
+  if (buttonC.innerText === answers[1].answer2) {
+    buttonC.style.backgroundColor = "green";
+  } else {
+    buttonC.style.backgroundColor = "red";
+  }
+  else if (buttonC.innerText === answers[3].answer4) {
+    buttonC.style.backgroundColor = "green";
+  } else {
+    buttonC.style.backgroundColor = "red";
+  }
+}
+
+function checkAnswerD() {
+  if (buttonD.innerText !== answers[0].answer1) {
+    buttonD.style.backgroundColor = "red";
+  }
 }
 
 //console.log(JSON.stringify(question1[0].answer1));
 //console.log(correctAnswer2);
 //console.log(correctAnswer3);
 
-const buttonSub = document.querySelector(".button");
-buttonSub.addEventListener("click", askQuestion, false);
-
-const buttonA = document.querySelector(".answer1");
-buttonA.addEventListener("click", checkAnswerA, false);
-
 //let b = document.querySelector(".answer2").innerText;
 //let c = document.querySelector(".answer3").innerText;
 //let d = document.querySelector(".answer4").innerText;
+
+const buttonSub = document.querySelector(".button");
+buttonSub.addEventListener("click", askQuestion, false);
+const buttonA = document.querySelector(".answer1");
+buttonA.addEventListener("click", checkAnswerA, false);
+
+const buttonB = document.querySelector(".answer2");
+buttonB.addEventListener("click", checkAnswerB, false);
+
+const buttonC = document.querySelector(".answer3");
+buttonC.addEventListener("click", checkAnswerC, false);
+
+const buttonD = document.querySelector(".answer4");
+buttonD.addEventListener("click", checkAnswerD, false);
