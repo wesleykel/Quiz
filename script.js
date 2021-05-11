@@ -13,10 +13,10 @@ function askQuestion() {
 
   i++;
 
-  buttonA.style.backgroundColor = " #f6f5f5";
-  buttonB.style.backgroundColor = " #f6f5f5";
-  buttonC.style.backgroundColor = " #f6f5f5";
-  buttonD.style.backgroundColor = " #f6f5f5";
+  answerA.style.backgroundColor = " #f6f5f5";
+  answerB.style.backgroundColor = " #f6f5f5";
+  answerC.style.backgroundColor = " #f6f5f5";
+  answerD.style.backgroundColor = " #f6f5f5";
 }
 
 const question1 = [
@@ -38,7 +38,7 @@ const question1 = [
   },
 
   {
-    ques: "How many letters in the Russian Alphabet",
+    ques: "How many letters in the Russian Alphabet?",
 
     answer1: "19",
     answer2: "32",
@@ -73,6 +73,31 @@ const question1 = [
     answer3: "Mars",
     answer4: "Neptune",
   },
+  {
+    ques: " What is the capital of Chile?",
+
+    answer1: "Rio",
+    answer2: "Bogada",
+    answer3: "Rome",
+    answer4: "Santiago",
+  },
+
+  {
+    ques: " How many sitting US presidents have been assassinated?",
+
+    answer1: "Three",
+    answer2: "Four",
+    answer3: "Two",
+    answer4: "Nine",
+  },
+  {
+    ques: "What is the painting ‘La Gioconda’ more usually known as?",
+
+    answer1: "The Mona Lisa",
+    answer2: "The Starry Night",
+    answer3: "The Persistance",
+    answer4: "The Birth of Venus",
+  },
 ];
 
 const answers = [
@@ -97,121 +122,85 @@ const answers = [
   {
     answer: "Neptune",
   },
+
+  {
+    answer: "Santiago",
+  },
+  {
+    answer: "Four",
+  },
+
+  {
+    answer: "The Mona Lisa",
+  },
 ];
-
-//Check answer need to be worked out
-/*
-function checkAnswerA() {
-  if (buttonA.innerText === answers[0].answer1) {
-    buttonA.style.backgroundColor = "green";
-  } else {
-    buttonA.style.backgroundColor = "red";
-  }
-}
-
-function checkAnswerB() {
-  console.log(buttonB);
-  if (buttonB.innerText === answers[2].answer3) {
-    buttonB.style.backgroundColor = "green";
-  } else {
-    buttonB.style.backgroundColor = "red";
-  }
-}
-
-function checkAnswerC() {
-  if (buttonC.innerText === buttonC.style.backgroundColor = "green";
-  } else {
-    buttonC.style.backgroundColor = "red";) {
-    buttonC.style.backgroundColor = "green";
-  } else {
-    buttonC.style.backgroundColor = "red";
-  }
-  if (buttonC.innerText === answers[3].answer4) {
-    buttonC.style.backgroundColor = "green";
-  } else {
-    buttonC.style.backgroundColor = "red";
-  }
-}
-
-function checkAnswerD() {
-  if (buttonD.innerText !== answers[0].answer1) {
-    buttonD.style.backgroundColor = "red";
-  }
-}
-*/
-//console.log(JSON.stringify(question1[0].answer1));
-//console.log(correctAnswer2);
-//console.log(correctAnswer3);
-
-//let b = document.querySelector(".answer2").innerText;
-//let c = document.querySelector(".answer3").innerText;
-//let d = document.querySelector(".answer4").innerText;
 
 const buttonSub = document.querySelector(".button");
 buttonSub.addEventListener("click", askQuestion, false);
 
-const buttonA = document.querySelector(".answer1");
-buttonA.addEventListener("click", checkAnswer, false);
-buttonA.addEventListener("click", checkAnswerE, false);
+const answerBox = document.querySelectorAll("#anwer");
 
-const buttonB = document.querySelector(".answer2");
-buttonB.addEventListener("click", checkAnswerB, false);
+const answerA = document.querySelector(".answer1");
+answerA.addEventListener("click", loopAnswer1, false);
 
-const buttonC = document.querySelector(".answer3");
-buttonC.addEventListener("click", checkAnswerC, false);
-buttonC.addEventListener("click", checkAnswerD, false);
+const answerB = document.querySelector(".answer2");
+answerB.addEventListener("click", loopAnswer2, false);
 
-const buttonD = document.querySelector(".answer4");
-buttonD.addEventListener("click", checkAnswerF, false);
+const answerC = document.querySelector(".answer3");
+answerC.addEventListener("click", loopAnswer3, false);
 
-function checkAnswer() {
-  switch (answers[0].answer) {
-    case buttonA.innerText:
-      buttonA.style.backgroundColor = "green";
-      break;
+const answerD = document.querySelector(".answer4");
+answerD.addEventListener("click", loopAnswer4, false);
+
+function loopAnswer1() {
+  if (
+    answerA.innerText === answers[0].answer ||
+    answerA.innerText === answers[4].answer ||
+    answerA.innerText === answers[8].answer
+  ) {
+    console.log("correct");
+    answerA.style.backgroundColor = "green";
+  } else {
+    console.log("incorrect");
+    answerA.style.backgroundColor = "red";
   }
 }
 
-function checkAnswerC() {
-  switch (answers[1].answer) {
-    case buttonC.innerText:
-      buttonC.style.backgroundColor = "green";
-      break;
+function loopAnswer2() {
+  if (
+    answerB.innerText === answers[2].answer ||
+    answerB.innerText === answers[7].answer
+  ) {
+    console.log("correct");
+    answerB.style.backgroundColor = "green";
+  } else {
+    console.log("incorrect");
+    answerB.style.backgroundColor = "red";
   }
 }
 
-function checkAnswerB() {
-  switch (answers[2].answer) {
-    case buttonB.innerText:
-      buttonB.style.backgroundColor = "green";
-      break;
+function loopAnswer3() {
+  if (
+    answerC.innerText === answers[1].answer ||
+    answerC.innerText === answers[3].answer
+  ) {
+    console.log("correct");
+    answerC.style.backgroundColor = "green";
+  } else {
+    console.log("incorrect");
+    answerC.style.backgroundColor = "red";
   }
 }
 
-function checkAnswerD() {
-  switch (answers[3].answer) {
-    case buttonC.innerText:
-      buttonC.style.backgroundColor = "green";
-      break;
+function loopAnswer4() {
+  if (
+    answerD.innerText === answers[5].answer ||
+    answerD.innerText === answers[6].answer
+  ) {
+    console.log("correct");
+    answerD.style.backgroundColor = "green";
+  } else {
+    console.log("incorrect");
+    answerD.style.backgroundColor = "red";
   }
 }
-
-function checkAnswerE() {
-  switch (answers[4].answer) {
-    case buttonA.innerText:
-      buttonA.style.backgroundColor = "green";
-      break;
-  }
-}
-
-function checkAnswerF() {
-  switch (answers[5].answer) {
-    case buttonD.innerText:
-      buttonD.style.backgroundColor = "green";
-      break;
-  }
-}
-
-//buttonB.style.backgroundColor = "red";
-//buttonC.style.backgroundColor = "red";
-//buttonD.style.backgroundColor = "red";
