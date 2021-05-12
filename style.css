@@ -6,7 +6,7 @@ body {
   padding-top: 10vh;
 }
 .wrapper {
-  border: 3px solid;
+  border: 2px solid;
   width: 60%;
   margin: 0 auto;
   font-family: "Lato", sans-serif;
@@ -28,10 +28,11 @@ header {
   background-color: #d3e0ea;
 }
 .answer-box {
-  border: 1px solid;
+  border: 1px solid lightgray;
   text-align: center;
   display: grid;
   grid-template-columns: auto auto;
+  cursor: pointer;
 }
 .answer1,
 .answer2,
@@ -55,6 +56,7 @@ button {
   font-weight: bold;
   border-radius: 6px;
   background-color: #e84545;
+  cursor: pointer;
 }
 
 footer {
