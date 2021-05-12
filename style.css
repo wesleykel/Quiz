@@ -41,12 +41,6 @@ header {
   border: 1px lightgray solid;
   font-size: 3vh;
 }
-/*.answer1:hover,
-.answer2:hover,
-.answer3:hover,
-.answer4:hover {
-  background-color: #ec524b;
-}*/
 
 .button {
   padding: 30px;
@@ -61,4 +55,17 @@ button {
   font-weight: bold;
   border-radius: 6px;
   background-color: #e84545;
+}
+
+footer {
+  text-align: right;
+  position: fixed;
+  padding: 10px 10px 0px 10px;
+  bottom: 0;
+  width: 100%;
+  /* Height of the footer*/
+  height: 20px;
+  background-color: #d3e0ea5d;
+
+  font-family: "Lato", sans-serif;
 }

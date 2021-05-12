@@ -1,4 +1,5 @@
 let i = 0;
+let score = 0;
 
 function askQuestion() {
   question = document.querySelector(".question").innerText = question1[i].ques;
@@ -17,6 +18,22 @@ function askQuestion() {
   answerB.style.backgroundColor = " #f6f5f5";
   answerC.style.backgroundColor = " #f6f5f5";
   answerD.style.backgroundColor = " #f6f5f5";
+  if (i === 1) {
+    buttonSub.innerText = "";
+  }
+  console.log(score);
+  endGame();
+}
+
+function endGame() {
+  if (i === 11) {
+    end = document.querySelector(
+      ".question"
+    ).innerText = `End of quiz, you scored ${score} out of 10`;
+    setTimeout(function () {
+      location.reload();
+    }, 5000);
+  }
 }
 
 const question1 = [
@@ -98,6 +115,23 @@ const question1 = [
     answer3: "The Persistance",
     answer4: "The Birth of Venus",
   },
+
+  {
+    ques: "How many Olympic gold medals has Mo Farah won?",
+
+    answer1: "6",
+    answer2: "5",
+    answer3: "4",
+    answer4: "3",
+  },
+  {
+    ques: "",
+
+    answer1: "",
+    answer2: "",
+    answer3: "",
+    answer4: "",
+  },
 ];
 
 const answers = [
@@ -133,6 +167,10 @@ const answers = [
   {
     answer: "The Mona Lisa",
   },
+
+  {
+    answer: "4",
+  },
 ];
 
 const buttonSub = document.querySelector(".button");
@@ -158,11 +196,17 @@ function loopAnswer1() {
     answerA.innerText === answers[4].answer ||
     answerA.innerText === answers[8].answer
   ) {
-    console.log("correct");
-    answerA.style.backgroundColor = "green";
+    answerA.style.backgroundColor = "#c6ebc9";
+    score++;
+    setTimeout(function () {
+      askQuestion();
+    }, 1500);
   } else {
-    console.log("incorrect");
-    answerA.style.backgroundColor = "red";
+    answerA.style.backgroundColor = "#d35d6e";
+
+    setTimeout(function () {
+      askQuestion();
+    }, 700);
   }
 }
 
@@ -171,24 +215,35 @@ function loopAnswer2() {
     answerB.innerText === answers[2].answer ||
     answerB.innerText === answers[7].answer
   ) {
-    console.log("correct");
-    answerB.style.backgroundColor = "green";
+    answerB.style.backgroundColor = "#c6ebc9";
+    score++;
+    setTimeout(function () {
+      askQuestion();
+    }, 1500);
   } else {
-    console.log("incorrect");
-    answerB.style.backgroundColor = "red";
+    answerB.style.backgroundColor = "#d35d6e";
+    setTimeout(function () {
+      askQuestion();
+    }, 700);
   }
 }
 
 function loopAnswer3() {
   if (
     answerC.innerText === answers[1].answer ||
-    answerC.innerText === answers[3].answer
+    answerC.innerText === answers[3].answer ||
+    answerC.innerText === answers[9].answer
   ) {
-    console.log("correct");
-    answerC.style.backgroundColor = "green";
+    answerC.style.backgroundColor = "#c6ebc9";
+    score++;
+    setTimeout(function () {
+      askQuestion();
+    }, 1500);
   } else {
-    console.log("incorrect");
-    answerC.style.backgroundColor = "red";
+    answerC.style.backgroundColor = "#d35d6e";
+    setTimeout(function () {
+      askQuestion();
+    }, 700);
   }
 }
 
@@ -197,10 +252,15 @@ function loopAnswer4() {
     answerD.innerText === answers[5].answer ||
     answerD.innerText === answers[6].answer
   ) {
-    console.log("correct");
-    answerD.style.backgroundColor = "green";
+    answerD.style.backgroundColor = "#c6ebc9";
+    score++;
+    setTimeout(function () {
+      askQuestion();
+    }, 1500);
   } else {
-    console.log("incorrect");
-    answerD.style.backgroundColor = "red";
+    answerD.style.backgroundColor = "#d35d6e";
+    setTimeout(function () {
+      askQuestion();
+    }, 700);
   }
 }
